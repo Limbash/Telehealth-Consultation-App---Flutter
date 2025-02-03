@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:telehealth_consultation_app/core/providers/theme_provider.dart';
+import 'package:telehealth_consultation_app/core/providers/user_provider.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -8,6 +9,7 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeModeProvider);
+    final user = ref.watch(userProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -28,9 +30,20 @@ class HomeScreen extends ConsumerWidget {
         ],
       ),
       body: Center(
-        child: Text(
-          'Welcome to Telehealth Consultation App!',
-          style: Theme.of(context).textTheme.displayLarge,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (user != null)
+              Text(
+                'Welcome, ${user.name}!',
+                style: Theme.of(context).textTheme.displayLarge,
+              ),
+            SizedBox(height: 20),
+            Text(
+              'Email: ${user?.email ?? "Not logged in"}',
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          ],
         ),
       ),
     );

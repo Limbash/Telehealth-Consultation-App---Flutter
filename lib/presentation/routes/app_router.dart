@@ -4,6 +4,7 @@ import 'package:telehealth_consultation_app/presentation/screens/auth/login_scre
 import 'package:telehealth_consultation_app/presentation/screens/auth/signup_screen.dart';
 import 'package:telehealth_consultation_app/presentation/screens/home/home_screen.dart';
 import 'package:telehealth_consultation_app/presentation/screens/splash/splashscreen.dart';
+import 'package:telehealth_consultation_app/presentation/screens/welcome/welcome_screen.dart';
 
 class AppRouter {
   // GoRouter instance
@@ -14,6 +15,14 @@ class AppRouter {
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
           return SplashScreen();
+        },
+      ),
+
+      // Welcome Screen
+      GoRoute(
+        path: '/welcome',
+        builder: (BuildContext context, GoRouterState state) {
+          return WelcomeScreen();
         },
       ),
 

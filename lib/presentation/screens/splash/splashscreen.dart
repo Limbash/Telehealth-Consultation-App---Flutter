@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Navigate to the Welcome Page after 3 seconds
+    Future.delayed(Duration(seconds: 3), () {
+      context.go('/welcome'); // Navigate to the Welcome Page
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
