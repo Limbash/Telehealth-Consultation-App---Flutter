@@ -59,6 +59,13 @@ class LoginScreen extends ConsumerWidget {
               },
               child: Text('Login'),
             ),
+            Text('OR'),
+            OutlinedButton(
+              onPressed: () {},
+              child: Text(
+                'Sign in with google'.toUpperCase(),
+              ),
+            ),
           ],
         ),
       ),
