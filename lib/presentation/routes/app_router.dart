@@ -30,7 +30,7 @@ class AppRouter {
       GoRoute(
         path: '/login',
         builder: (BuildContext context, GoRouterState state) {
-          return LoginScreen();
+          return LoginPage();
         },
       ),
 
@@ -38,7 +38,7 @@ class AppRouter {
       GoRoute(
         path: '/signup',
         builder: (BuildContext context, GoRouterState state) {
-          return SignupScreen();
+          return SignUpPage();
         },
       ),
 
